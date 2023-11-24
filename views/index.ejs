@@ -2,7 +2,7 @@
   <div class="hero__container">
     <div class="hero__container--content">
       <div class="author__heading">
-        <h3 id="heading">Hi, I'm Yi-Shan</h3>
+        <h3 id="heading">Welcome! Enjoy reading</h3>
       </div>
       <div class="author__body">
         <h2 id="body">
@@ -17,73 +17,19 @@
   </div>
 </div>
 
-<section class="projects">
-  <h2 class="projects__heading">Recent Projects</h2>
-  <div class="projects__card__container">
-    <div class="projects__card">
-      <div class="card__img__container">
-        <a href="/"
-          ><img
-            class="card__img"
-            src="/img/prj-placeholder.jpg"
-            alt="project-image"
-        /></a>
-      </div>
-      <div class="card__content">
-        <a href="/">Project name1</a>
-        <p>This is a description about the project</p>
-      </div>
-    </div>
-
-    <div class="projects__card">
-      <div class="card__img__container">
-        <a href="/"
-          ><img
-            class="card__img"
-            src="/img/prj-placeholder.jpg"
-            alt="project-image"
-        /></a>
-      </div>
-      <div class="card__content">
-        <a href="/">Project name1</a>
-        <p>This is a description about the project</p>
-      </div>
-    </div>
-
-    <div class="projects__card">
-      <div class="card__img__container">
-        <a href="/"
-          ><img
-            class="card__img"
-            src="/img/prj-placeholder.jpg"
-            alt="project-image"
-        /></a>
-      </div>
-      <div class="card__content">
-        <a href="/">Project name1</a>
-        <p>This is a description about the project</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
+<section class="article__container">
+  <h2 class="article__heading">Recent articles</h2>
 
   <ul class="article-ul">
-    <% data.forEach(post => { %>
+    <% data.slice(0,3).forEach(post => { %>
     <li>
       <a href="/post/<%= post._id %>">
-        <span><%= post.title %></span>
-        <span class="article-list__date"
-          ><%= post.createdAt.toDateString() %></span
-        >
+        <span class="article__title"><%= post.title %></span>
       </a>
+      <span class="article-list__date"
+        ><%= post.createdAt.toDateString() %></span
+      >
     </li>
     <% }) %>
   </ul>
-
-  <% if (nextPage !== null) { %>
-  <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
-  <% } %>
 </section>

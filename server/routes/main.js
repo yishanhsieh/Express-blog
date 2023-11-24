@@ -21,16 +21,16 @@ router.get("", async (req, res) => {
       .limit(perPage)
       .exec();
 
-    const count = await Post.countDocuments();
+    /* const count = await Post.countDocuments();
     const nextPage = parseInt(page) + 1;
     const hasNextPage = nextPage <= Math.ceil(count / perPage);
-
+ */
     res.render("index", {
       locals,
       data,
-      current: page,
-      nextPage: hasNextPage ? nextPage : null,
-      currentRoute: "/",
+      /* current: page,
+      nextPage: hasNextPage ? nextPage : null, */
+      /* currentRoute: "/", */
     });
   } catch (error) {
     console.log(error);
@@ -69,9 +69,39 @@ router.get("/about", (req, res) => {
   });
 });
 
-/* Get project */
-router.get("/project", (req, res) => {
-  res.render("project");
+/* Get articles */
+router.get("/articles", async (req, res) => {
+  try {
+    const locals = {
+      title: "Yishan Hsieh",
+      description: "Simple Blog created with NodeJs, Express & MongoDb.",
+    };
+
+    let perPage = 10;
+    let page = req.query.page || 1;
+
+    const data = await Post.aggregate([{ $sort: { createdAt: -1 } }])
+      .skip(perPage * page - perPage)
+      .limit(perPage)
+      .exec();
+
+    const count = await Post.countDocuments();
+    const nextPage = parseInt(page) + 1;
+    const prePage = parseInt(page) - 1;
+    const hasNextPage = nextPage <= Math.ceil(count / perPage);
+    const hasPrePage = page > 1;
+
+    res.render("articles", {
+      locals,
+      data,
+      current: page,
+      nextPage: hasNextPage ? nextPage : null,
+      prePage: hasPrePage ? prePage : null,
+      currentRoute: "/",
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
