@@ -197,3 +197,142 @@ h3 {
     text-align: center;
   }
 }
+
+/* Recent project Section */
+
+.projects {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: 270px;
+  padding: 30px;
+  margin: 160px auto;
+}
+
+.projects__card__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects__card {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.card__img {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 680px) {
+  .projects {
+    display: grid;
+    grid-template-rows: 48px 1fr;
+    justify-content: center;
+    align-content: center;
+    margin: 80px 5px 0 5px;
+    height: 90%;
+  }
+  .projects__card__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .projects__card {
+    margin: 10px 0;
+  }
+  .projects__heading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .card__img {
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
+  }
+}
+
+/* Dashboard Admin */
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-posts {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-post-controls form {
+  display: inline-block;
+}
+
+.admin-post-controls .btn {
+  display: inline-block;
+  background-color: var(--black);
+  color: white;
+  border: 0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  line-height: 2;
+}
+
+.admin-posts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.pagination {
+  font-size: 1.3rem;
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.pagination:hover {
+  color: var(--black);
+}
+
+/* Admin panel component */
+
+.btn {
+  background-color: var(--black);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 10px 16px;
+  background-color: red;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  margin-bottom: 1rem;
+}

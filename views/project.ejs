@@ -1,24 +1,5 @@
-<div class="hero__background__image">
-  <div class="hero__container">
-    <div class="hero__container--content">
-      <div class="author__heading">
-        <h3 id="heading">Hi, I'm Yi-Shan</h3>
-      </div>
-      <div class="author__body">
-        <h2 id="body">
-          I design and code for better <span>data visualization</span> and
-          <span>user experience</span>
-        </h2>
-      </div>
-    </div>
-    <div class="hero__container--img">
-      <img class="hero__img" src="/img/profile-pic.png" alt="profile-pic" />
-    </div>
-  </div>
-</div>
-
+<h1>Projects</h1>
 <section class="projects">
-  <h2 class="projects__heading">Recent Projects</h2>
   <div class="projects__card__container">
     <div class="projects__card">
       <div class="card__img__container">
@@ -65,25 +46,4 @@
       </div>
     </div>
   </div>
-</section>
-
-<section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
-
-  <ul class="article-ul">
-    <% data.forEach(post => { %>
-    <li>
-      <a href="/post/<%= post._id %>">
-        <span><%= post.title %></span>
-        <span class="article-list__date"
-          ><%= post.createdAt.toDateString() %></span
-        >
-      </a>
-    </li>
-    <% }) %>
-  </ul>
-
-  <% if (nextPage !== null) { %>
-  <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
-  <% } %>
 </section>
