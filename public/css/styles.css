@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Mono&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Figtree&family=Montserrat&family=Space+Mono&display=swap");
 :root {
   --black: #1c1c1c;
   --grey: #5e5e5e;
@@ -302,12 +302,11 @@ h3 {
   padding: 30px;
   margin: 0 80px 120px 80px;
 }
-.post__title {
-}
 
 .post__content {
   line-height: 2rem;
   font-size: 1.2rem;
+  font-family: "Figtree", sans-serif;
 }
 
 .post__date {
