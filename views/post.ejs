@@ -1,2 +1,8 @@
-<h1><%= data.title %></h1>
-<article class="article"><%- data.sanitizedHtml %></article>
+<div class="post__container">
+  <h1 class="post__title"><%= data.title %></h1>
+
+  <div class="post__content">
+    <span class="post__date"><%= data.createdAt.toDateString() %></span>
+    <%- data.sanitizedHtml %>
+  </div>
+</div>
