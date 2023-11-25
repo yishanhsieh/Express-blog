@@ -411,7 +411,7 @@ input[type="email"],
 input[type="password"],
 select,
 textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: "Figtree", sans-serif;
   font-size: 1rem;
   display: block;
   box-sizing: border-box;
@@ -427,6 +427,12 @@ textarea {
   justify-content: center;
   line-height: 1.5rem;
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 680px) {
+  .footer {
+    font-size: 0.8rem;
+  }
 }
 
 /* About Section*/
@@ -495,4 +501,57 @@ textarea {
 #skateboard {
   width: 126px;
   height: auto;
+}
+
+@media only screen and (max-width: 950px) {
+  .about__container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .about__description {
+    margin: auto auto;
+  }
+
+  .about__image {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto;
+    align-items: center;
+    justify-self: center;
+  }
+
+  .about__card p {
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  #pm,
+  #library,
+  #campus,
+  #skateboard {
+    width: 400px;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 364px) {
+  #pm,
+  #library,
+  #campus,
+  #skateboard {
+    width: 250px;
+    height: auto;
+  }
+
+  .about__card p {
+    margin: 0 auto;
+    width: 250px;
+  }
 }
