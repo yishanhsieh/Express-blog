@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: "Montserrat", "Space Mono", monospace, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #000;
   font-size: var(--font-size-base);
   background-color: var(--lightwhite);
@@ -119,7 +119,11 @@ h3 {
 @media only screen and (max-width: 960px) {
   .navbar__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .navbar__menu {
+    font-size: 1rem;
   }
 }
 
@@ -174,9 +178,6 @@ h3 {
   filter: drop-shadow(0px 44px 34px rgba(98, 97, 97, 0.25));
   overflow: visible;
   border-radius: var(--border-radius);
-}
-
-.social__icons {
 }
 
 .social__icons a {
@@ -279,16 +280,35 @@ h3 {
 @media only screen and (max-width: 680px) {
   .article__container {
     display: grid;
-    grid-template-rows: 48px 1fr;
+    grid-template-rows: auto;
     justify-content: center;
     align-content: center;
-    margin: 0 5px;
+    margin-top: 5px;
+    margin-bottom: 48px;
     height: 90%;
   }
 
   .article__heading {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-align: center;
+  }
+  .article__container h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .article-ul li {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-between;
+  }
+
+  .article-ul li a {
+    font-size: 1rem;
+  }
+  .article-list__date {
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 5px;
   }
 }
 /* Post section */
@@ -312,6 +332,16 @@ h3 {
 .post__date {
   color: var(--grey);
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 680px) {
+  .post__container {
+    margin: 0;
+    margin-bottom: 48px;
+  }
+  .post__title {
+    font-size: 2rem;
+  }
 }
 
 /* Dashboard Admin */
