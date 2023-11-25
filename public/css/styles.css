@@ -429,7 +429,7 @@ textarea {
   font-size: 1rem;
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 768px) {
   .footer {
     font-size: 0.8rem;
   }
@@ -507,10 +507,16 @@ textarea {
   .about__container {
     display: grid;
     grid-template-columns: auto;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .about__description {
-    margin: auto auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
   }
 
   .about__image {
@@ -538,6 +544,21 @@ textarea {
   #skateboard {
     width: 400px;
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #pm,
+  #library,
+  #campus,
+  #skateboard {
+    width: 300px;
+    height: auto;
+  }
+
+  .about__card p {
+    margin: 0 auto;
+    width: 300px;
   }
 }
 
